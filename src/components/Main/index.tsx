@@ -1,16 +1,45 @@
 import React from "react";
 import { Layout, Typography, Row, Col, Card, Button } from "antd";
 import { NavLink } from "react-router-dom";
-import { News } from "../News"; // Yangiliklar uchun interfeys
+// import { News } from "../News"; // Yangiliklar uchun interfeys
 
 const { Content } = Layout;
 const { Title, Paragraph } = Typography;
 
-interface MainPageProps {
-  latestNews: News[];
+interface News {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  image: string;
+  views: number;
+  likes: number;
 }
 
-const MainPage: React.FC<MainPageProps> = ({ latestNews }) => {
+const newsData: News[] = [
+  {
+    id: 1,
+    title: "Maktabdagi yangiliklar",
+    description:
+      "Mehrli maktabda yangi o'quv yilining boshlanishi nishonlandi.",
+    date: "Sentabr 01, 2024",
+    image: "/src/assets/toshkent.jpeg",
+    views: 124,
+    likes: 34,
+  },
+  {
+    id: 2,
+    title: "O'quvchilarimizning muvaffaqiyatlari",
+    description: "O'quvchilarimiz xalqaro tanlovda g'olib chiqishdi.",
+    date: "Avgust 25, 2024",
+    image: "/src/assets/samarqand.jpg",
+    views: 89,
+    likes: 25,
+  },
+  // Qo'shimcha yangiliklar ma'lumotlari bu yerda
+];
+
+const MainPage: React.FC = () => {
   return (
     <Layout>
       <Content style={{ padding: "20px" }}>
@@ -27,7 +56,7 @@ const MainPage: React.FC<MainPageProps> = ({ latestNews }) => {
         <div style={{ marginBottom: "30px" }}>
           <Title level={2}>So'nggi Yangiliklar</Title>
           <Row gutter={16}>
-            {latestNews?.slice(0, 3).map((news) => (
+            {newsData?.slice(0, 3).map((news) => (
               <Col span={8} key={news.id}>
                 <Card
                   cover={<img alt={news.title} src={news.image} />}
