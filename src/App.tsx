@@ -10,6 +10,7 @@ import ContactUsPage from "./components/ContactUs";
 import OpinionPage from "./components/Opinion";
 import SocialPage from "./components/Social";
 import FooterPage from "./components/Footer";
+import HomiylarPage from "./components/Homiylar";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/contact" element={<ContactUsPage />} />
         <Route path="/opinion" element={<OpinionPage />} />
         <Route path="/social" element={<SocialPage />} />
+        <Route path="/homiylar" element={<HomiylarPage />} />
       </Routes>
       <FooterPage />
     </>

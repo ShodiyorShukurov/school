@@ -1,32 +1,30 @@
 import React from "react";
 import { Layout, Typography, Row, Col, Divider } from "antd";
-import maktab from '../../assets/mehrli maktab.jpeg'
-import direktor from  "../../assets/direktor.jpg"
-import asoschi from "../../assets/asoschi.jpg"
+import maktab from "../../assets/mehrli maktab.jpeg";
+import direktor from "../../assets/direktor.jpg";
+import asoschi from "../../assets/asoschi.jpg";
 
 const { Content } = Layout;
 const { Title, Paragraph, Text } = Typography;
 
 const AboutUsPage: React.FC = () => {
   return (
-    <Layout>
+    <Layout style={{ backgroundColor: "#fad2e3" }}>
       <Content style={{ padding: "20px", paddingTop: "60px" }}>
-        {/* Sahifa sarlavhasi */}
         <Title level={1} style={{ textAlign: "center", color: "#000" }}>
-          Biz Haqimizda
+          Biz haqimizda
         </Title>
 
-        {/* Qisqa ma'lumot */}
         <Paragraph
           style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}
         >
-          Mehrli Maktab - bu nafaqat bilim olish joyi, balki bolalarning ruhiy
-          va ma'naviy rivojlanishiga xizmat qiladigan ma'naviy maskandir. Biz
-          har bir bola noyob va iste'dodli ekanligiga ishonamiz va ularning
-          qobiliyatlarini rivojlantirish uchun zarur muhit yaratamiz.
+          <strong>Mehrli Maktab </strong> - bu nafaqat bilim olish joyi, balki
+          bolalarning ruhiy va ma'naviy rivojlanishiga xizmat qiladigan ma'naviy
+          maskandir. Biz har bir bola noyob va iste'dodli ekanligiga ishonamiz
+          va ularning qobiliyatlarini rivojlantirish uchun zarur muhit
+          yaratamiz.
         </Paragraph>
 
-        {/* Rasm va motivatsion gap */}
         <Row gutter={16} style={{ margin: "40px 0" }}>
           <Col xs={24} md={12}>
             <img
@@ -34,14 +32,13 @@ const AboutUsPage: React.FC = () => {
               alt="Mehrli Maktab"
               style={{ width: "100%", height: "400px", borderRadius: "8px" }}
             />
-          </Col>
-          <Col xs={24} md={12}>
             <div style={{ padding: "20px" }}>
-              <Title level={3} style={{ fontWeight: "800" }}>
-                "Bizning maqsadimiz - bolalarning bilim va iste'dodlarini eng
-                yuqori cho'qqilarga ko'tarishdir."
+              <Title level={3}>
+                <strong style={{ fontWeight: 800 }}>"Bizning maqsadimiz</strong>
+                - bolalarning bilim va iste'dodlarini eng yuqori cho'qqilarga
+                ko'tarishdir. <strong style={{ fontWeight: 800 }}>"</strong>
               </Title>
-              <Paragraph style={{ fontWeight: "700" }}>
+              <Paragraph style={{ fontWeight: "600" }}>
                 Bizning maktabimizda har bir o'quvchining talanti va
                 qobiliyatlarini rivojlantirishga alohida e'tibor qaratiladi.
                 Buning uchun biz zamonaviy va innovatsion ta'lim usullaridan
@@ -70,7 +67,7 @@ const AboutUsPage: React.FC = () => {
             <img
               src={direktor}
               alt="Direktor"
-              style={{ width: "200px", borderRadius: "50%" }}
+              style={{ width: "150px", borderRadius: "50%", height: "150px" }}
             />
             <Title level={4}>Direktor: Maftuna Karimova</Title>
             <Text>Bolalar ta'limi sohasida 15 yillik tajriba.</Text>
@@ -79,7 +76,7 @@ const AboutUsPage: React.FC = () => {
             <img
               src={asoschi}
               alt="Asoschi"
-              style={{ width: "200px", borderRadius: "50%" }}
+              style={{ width: "150px", borderRadius: "50%", height: "150px" }}
             />
             <Title level={4}>Asoschi: Akmal Bekmurodov</Title>
             <Text>

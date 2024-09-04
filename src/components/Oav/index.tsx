@@ -1,10 +1,8 @@
-// components/OAVPage.tsx
-
 import React from "react";
-import { Layout, Card, List, Typography, Divider } from "antd";
+import { Layout, Card,  Typography, Divider, Row, Col } from "antd";
 
 const { Content } = Layout;
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 const OAVPage: React.FC = () => {
   const pressReleases = [
@@ -23,37 +21,56 @@ const OAVPage: React.FC = () => {
 
   return (
     <Layout>
-      <Content style={{ padding: "20px" }}>
-        <Title level={2}>OAV sahifasi</Title>
-        <Paragraph>
-          Matbuot xabarlari, yangiliklar, va boshqa resurslar bilan tanishing.
+      <Content style={{ padding: "40px" }}>
+        <Title level={2} style={{ color: "#003366", textAlign: "center" }}>
+          OAV Sahifasi
+        </Title>
+        <Paragraph
+          style={{
+            textAlign: "center",
+            maxWidth: "600px",
+            margin: "0 auto",
+            color: "#666",
+          }}
+        >
+          Mehrli Maktabning matbuot xabarlari, yangiliklari va media uchun aloqa
+          ma'lumotlari bilan tanishing.
         </Paragraph>
 
-        {/* Press Releases */}
-        <Divider>Matbuot xabarlari</Divider>
-        <List
-          dataSource={pressReleases}
-          renderItem={(item) => (
-            <List.Item>
-              <Card title={item.title}>{item.date}</Card>
-            </List.Item>
-          )}
-        />
-
-        {/* Media Contacts */}
-        <Divider>Media uchun aloqa ma'lumotlari</Divider>
-        <List
-          dataSource={mediaContacts}
-          renderItem={(item) => (
-            <List.Item>
-              <Card title={item.name}>
-                <p>{item.role}</p>
-                <p>Telefon: {item.phone}</p>
-                <p>Email: {item.email}</p>
+        {/* Matbuot Xabarlari */}
+        <Divider>Matbuot Xabarlari</Divider>
+        <Row gutter={[16, 16]}>
+          {pressReleases.map((item, index) => (
+            <Col xs={24} sm={12} md={8} key={index}>
+              <Card hoverable>
+                <Title level={4}>{item.title}</Title>
+                <Text type="secondary">
+                  {new Date(item.date).toLocaleDateString()}
+                </Text>
               </Card>
-            </List.Item>
-          )}
-        />
+            </Col>
+          ))}
+        </Row>
+
+        {/* Media uchun Aloqa Ma'lumotlari */}
+        <Divider>Media uchun Aloqa Ma'lumotlari</Divider>
+        <Row gutter={[16, 16]}>
+          {mediaContacts.map((contact, index) => (
+            <Col xs={24} sm={12} md={8} key={index}>
+              <Card
+                hoverable
+                bordered={false}
+                style={{ border: "1px solid #e8e8e8" }}
+                bodyStyle={{ padding: "20px" }}
+              >
+                <Title level={4}>{contact.name}</Title>
+                <Text strong>{contact.role}</Text>
+                <p>Telefon: {contact.phone}</p>
+                <p>Email: {contact.email}</p>
+              </Card>
+            </Col>
+          ))}
+        </Row>
       </Content>
     </Layout>
   );

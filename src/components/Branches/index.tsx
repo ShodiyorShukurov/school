@@ -1,13 +1,17 @@
 import React from "react";
-import { Layout, Card, List, Typography, Divider } from "antd";
+import { Layout, Typography, Collapse, Divider } from "antd";
 import {
   EnvironmentOutlined,
   PhoneOutlined,
   MailOutlined,
 } from "@ant-design/icons";
+import toshkent from "../../assets/toshkent.jpeg";
+import samarqand from "../../assets/samarqand.jpg";
+import navoiy from "../../assets/navoiy.jpg";
 
 const { Content } = Layout;
 const { Title, Paragraph } = Typography;
+const { Panel } = Collapse;
 
 interface Filial {
   name: string;
@@ -20,12 +24,12 @@ interface Filial {
 
 const filiallarData: Filial[] = [
   {
-    name: "Toshkent Filiali",
+    name: "Toshkent",
     address: "Amir Temur ko'chasi, Toshkent",
     phone: "+998 71 123 4567",
     email: "tashkent@mehrlimaktab.uz",
     workingHours: "Dushanba-Juma: 9:00 - 18:00",
-    image: "/src/assets/toshkent.jpeg",
+    image: toshkent,
   },
   {
     name: "Samarqand Filiali",
@@ -33,7 +37,7 @@ const filiallarData: Filial[] = [
     phone: "+998 66 765 4321",
     email: "samarkand@mehrlimaktab.uz",
     workingHours: "Dushanba-Juma: 9:00 - 18:00",
-    image: "/src/assets/samarqand.jpg",
+    image: samarqand,
   },
   {
     name: "Navoiy Filiali",
@@ -41,66 +45,131 @@ const filiallarData: Filial[] = [
     phone: "+998 66 765 4321",
     email: "navoiy@mehrlimaktab.uz",
     workingHours: "Dushanba-Juma: 9:00 - 18:00",
-    image: "/src/assets/navoiy.jpg",
+    image: navoiy,
+  },
+  {
+    name: "Jizzax Filiali",
+    address: "Navoiy ko'chasi, Navoiy",
+    phone: "+998 66 765 4321",
+    email: "navoiy@mehrlimaktab.uz",
+    workingHours: "Dushanba-Juma: 9:00 - 18:00",
+    image: navoiy,
+  },
+  {
+    name: "Buxoro Filiali",
+    address: "Navoiy ko'chasi, Navoiy",
+    phone: "+998 66 765 4321",
+    email: "navoiy@mehrlimaktab.uz",
+    workingHours: "Dushanba-Juma: 9:00 - 18:00",
+    image: navoiy,
+  },
+  {
+    name: "Qashqadaryo Filiali",
+    address: "Navoiy ko'chasi, Navoiy",
+    phone: "+998 66 765 4321",
+    email: "navoiy@mehrlimaktab.uz",
+    workingHours: "Dushanba-Juma: 9:00 - 18:00",
+    image: navoiy,
   },
 ];
 
 const BranchesPage: React.FC = () => {
   return (
     <Layout>
-      <Content style={{ padding: "20px" }}>
-        <Title level={2}>Filiallarimiz</Title>
-        <Paragraph>
+      <Content style={{ padding: "20px", paddingTop: "60px" }}>
+        <Divider>
+          <Title level={2}>Filiallarimiz</Title>
+        </Divider>
+        <Paragraph
+          style={{
+            textAlign: "center",
+            marginBottom: "30px",
+            fontSize: "16px",
+          }}
+        >
           Bizning filiallarimizning joylashuvi va aloqa ma'lumotlari bilan
           tanishing.
         </Paragraph>
 
-        {/* Filiallar ro'yxati */}
-        <List
-          grid={{ gutter: 16, column: 3 }}
-          dataSource={filiallarData}
-          renderItem={(item) => (
-            <List.Item>
-              <Card
-                cover={
+        <Collapse accordion>
+          {filiallarData.map((item, index) => (
+            <Panel
+              header={<strong style={{ fontSize: "18px" }}>{item.name}</strong>}
+              key={index}
+            >
+              <div
+                style={{
+                  marginBottom: "16px",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    fontSize: "16px",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <p>
+                    <strong>Mo'ljal:</strong> <EnvironmentOutlined />{" "}
+                    {item.address}
+                  </p>
+                  <p>
+                    <strong>Telefon raqam:</strong> <PhoneOutlined />{" "}
+                    {item.phone}
+                  </p>
+                  <p>
+                    <strong>E-mail:</strong> <MailOutlined /> {item.email}
+                  </p>
+                  <p>
+                    {" "}
+                    <strong>Ish vaqti:</strong> {item.workingHours}
+                  </p>
+                </div>
+                <div style={{display: "flex", justifyContent: "space-between"}}>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48831.7923815649!2d65.33041391535039!3d40.098002251813455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f51c6d7e12931b3%3A0x613f6eb9636019bb!2z0J3QsNCy0L7QuCwg0KHQsNC80LDRgNC60LDQvdC00YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2s!4v1725429066871!5m2!1sru!2s"
+                    width="300"
+                    height="300"
+                    style={{ border: 0 }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+
                   <img
                     alt={item.name}
                     src={item.image}
-                    style={{ height: "200px", objectFit: "cover" }}
+                    style={{
+                      width: "300px",
+                      height: "300px",
+                      objectFit: "cover",
+                      marginLeft: "16px",
+                    }}
                   />
-                }
-              >
-                <Card.Meta title={item.name} />
-                <Divider />
-                <p>
-                  <EnvironmentOutlined /> {item.address}
-                </p>
-                <p>
-                  <PhoneOutlined /> {item.phone}
-                </p>
-                <p>
-                  <MailOutlined /> {item.email}
-                </p>
-                <p>Ish vaqti: {item.workingHours}</p>
-              </Card>
-            </List.Item>
-          )}
-        />
-
-        {/* Xarita qo'shish */}
-        <Divider>Xarita</Divider>
-        <div
-          style={{
-            width: "100%",
-            height: "400px",
-            backgroundColor: "#f0f0f0",
-            textAlign: "center",
-            lineHeight: "400px",
-          }}
-        >
-          {/* Google Map yoki boshqa xarita integratsiyasini bu yerga qo'shing */}
-          <span>Xarita bu yerda bo'ladi</span>
-        </div>
+                  <img
+                    alt={item.name}
+                    src={item.image}
+                    style={{
+                      width: "300px",
+                      height: "300px",
+                      objectFit: "cover",
+                      marginLeft: "16px",
+                    }}
+                  />
+                  <img
+                    alt={item.name}
+                    src={item.image}
+                    style={{
+                      width: "300px",
+                      height: "300px",
+                      objectFit: "cover",
+                      marginLeft: "16px",
+                    }}
+                  />
+                </div>
+              </div>
+            </Panel>
+          ))}
+        </Collapse>
       </Content>
     </Layout>
   );

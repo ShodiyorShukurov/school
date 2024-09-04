@@ -65,16 +65,21 @@ const HeaderPage: React.FC = () => {
             </Menu.Item>
           </SubMenu>
         </Menu>
-        <Button
-          type="primary"
-          shape="round"
-          style={{ backgroundColor: "#F0C040", borderColor: "#F0C040" }}
-        >
-          Homiylar
-        </Button>
+
+        <NavLink to="/homiylar">
+          <Button
+            type="primary"
+            shape="round"
+            style={{ backgroundColor: "#F0C040", borderColor: "#F0C040" }}
+          >
+            Homiylar
+          </Button>
+        </NavLink>
       </Header>
     </Layout>
   );
 };
 
 export default HeaderPage;
+
+

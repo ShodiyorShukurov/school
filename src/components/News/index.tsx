@@ -54,7 +54,7 @@ const newsData: News[] = [
     views: 89,
     likes: 25,
   },
-  // Qo'shimcha yangiliklar ma'lumotlari bu yerda
+
 ];
 
 const NewsPage: React.FC = () => {

@@ -42,7 +42,7 @@ const newsData: News[] = [
 const MainPage: React.FC = () => {
   return (
     <Layout>
-      <Carousel autoplay>
+      <Carousel autoplay style={{paddingTop: '60px'}}>
         {newsData.map((news) => (
           <div key={news.id}>
             <img
@@ -50,7 +50,7 @@ const MainPage: React.FC = () => {
               src={news.image}
               style={{
                 width: "100%",
-                maxHeight: "400px",
+                maxHeight: "600px",
                 objectFit: "cover",
               }}
             />
@@ -58,7 +58,7 @@ const MainPage: React.FC = () => {
         ))}
       </Carousel>
       <Content style={{ padding: "20px" }}>
-        {/* Asosiy Sarlavha */}
+      
         <div style={{ textAlign: "center", marginBottom: "30px" }}>
           <Title level={1}>Mehrli Maktabga Xush Kelibsiz!</Title>
           <Paragraph>
