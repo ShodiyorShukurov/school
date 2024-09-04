@@ -29,7 +29,7 @@ interface News {
   title: string;
   description: string;
   date: string;
-  image: object;
+  image: string;
   views: number;
   likes: number;
 }
@@ -41,7 +41,7 @@ const newsData: News[] = [
     description:
       "Mehrli maktabda yangi o'quv yilining boshlanishi nishonlandi.",
     date: "Sentabr 01, 2024",
-    image: { rasm1 },
+    image: rasm1 ,
     views: 124,
     likes: 34,
   },
@@ -50,7 +50,7 @@ const newsData: News[] = [
     title: "O'quvchilarimizning muvaffaqiyatlari",
     description: "O'quvchilarimiz xalqaro tanlovda g'olib chiqishdi.",
     date: "Avgust 25, 2024",
-    image: {rasm2},
+    image: rasm2,
     views: 89,
     likes: 25,
   },
