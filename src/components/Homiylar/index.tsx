@@ -2,7 +2,7 @@ import React from "react";
 import { Layout, Card, Typography, Row, Col, Divider, Button } from "antd";
 
 const { Content } = Layout;
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph } = Typography;
 
 interface Sponsor {
   name: string;
