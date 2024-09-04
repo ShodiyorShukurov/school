@@ -1,5 +1,3 @@
-// components/FiliallarPage.tsx
-
 import React from "react";
 import { Layout, Card, List, Typography, Divider } from "antd";
 import {
@@ -35,7 +33,7 @@ const filiallarData: Filial[] = [
     phone: "+998 66 765 4321",
     email: "samarkand@mehrlimaktab.uz",
     workingHours: "Dushanba-Juma: 9:00 - 18:00",
-    image: '/src/assets/samarqand.jpg',
+    image: "/src/assets/samarqand.jpg",
   },
   {
     name: "Navoiy Filiali",
@@ -43,7 +41,7 @@ const filiallarData: Filial[] = [
     phone: "+998 66 765 4321",
     email: "navoiy@mehrlimaktab.uz",
     workingHours: "Dushanba-Juma: 9:00 - 18:00",
-    image: '/src/assets/navoiy.jpg',
+    image: "/src/assets/navoiy.jpg",
   },
 ];
 
@@ -64,9 +62,16 @@ const BranchesPage: React.FC = () => {
           renderItem={(item) => (
             <List.Item>
               <Card
-                cover={<span>filiallar joylashuv joyi bu yerda bo'ladi</span>}
-                title={item.name}
+                cover={
+                  <img
+                    alt={item.name}
+                    src={item.image}
+                    style={{ height: "200px", objectFit: "cover" }}
+                  />
+                }
               >
+                <Card.Meta title={item.name} />
+                <Divider />
                 <p>
                   <EnvironmentOutlined /> {item.address}
                 </p>

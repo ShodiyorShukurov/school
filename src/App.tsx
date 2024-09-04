@@ -9,6 +9,7 @@ import BranchesPage from "./components/Branches";
 import ContactUsPage from "./components/ContactUs";
 import OpinionPage from "./components/Opinion";
 import SocialPage from "./components/Social";
+import FooterPage from "./components/Footer";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/opinion" element={<OpinionPage />} />
         <Route path="/social" element={<SocialPage />} />
       </Routes>
+      <FooterPage />
     </>
   );
 };

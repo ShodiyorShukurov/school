@@ -1,9 +1,8 @@
 import React from "react";
-import { Layout, Typography, Row, Col, Card, Button } from "antd";
+import { Layout, Typography, Row, Col, Card,  Carousel } from "antd";
 import { NavLink } from "react-router-dom";
-// import { News } from "../News"; // Yangiliklar uchun interfeys
-import rasm1 from "../../assets/toshkent.jpeg"
-import rasm2 from "../../assets/navoiy.jpg"
+import rasm1 from "../../assets/toshkent.jpeg";
+import rasm2 from "../../assets/navoiy.jpg";
 
 const { Content } = Layout;
 const { Title, Paragraph } = Typography;
@@ -13,7 +12,7 @@ interface News {
   title: string;
   description: string;
   date: string;
-  image: object;
+  image: string;
   views: number;
   likes: number;
 }
@@ -25,7 +24,7 @@ const newsData: News[] = [
     description:
       "Mehrli maktabda yangi o'quv yilining boshlanishi nishonlandi.",
     date: "Sentabr 01, 2024",
-    image: {rasm1},
+    image: rasm1,
     views: 124,
     likes: 34,
   },
@@ -34,16 +33,30 @@ const newsData: News[] = [
     title: "O'quvchilarimizning muvaffaqiyatlari",
     description: "O'quvchilarimiz xalqaro tanlovda g'olib chiqishdi.",
     date: "Avgust 25, 2024",
-    image: {rasm2},
+    image: rasm2,
     views: 89,
     likes: 25,
   },
-  // Qo'shimcha yangiliklar ma'lumotlari bu yerda
 ];
 
 const MainPage: React.FC = () => {
   return (
     <Layout>
+      <Carousel autoplay>
+        {newsData.map((news) => (
+          <div key={news.id}>
+            <img
+              alt={news.title}
+              src={news.image}
+              style={{
+                width: "100%",
+                maxHeight: "400px",
+                objectFit: "cover",
+              }}
+            />
+          </div>
+        ))}
+      </Carousel>
       <Content style={{ padding: "20px" }}>
         {/* Asosiy Sarlavha */}
         <div style={{ textAlign: "center", marginBottom: "30px" }}>
@@ -58,7 +71,7 @@ const MainPage: React.FC = () => {
         <div style={{ marginBottom: "30px" }}>
           <Title level={2}>So'nggi Yangiliklar</Title>
           <Row gutter={16}>
-            {newsData?.slice(0, 3).map((news) => (
+            {newsData.slice(0, 3).map((news) => (
               <Col span={8} key={news.id}>
                 <Card
                   cover={<img alt={news.title} src={news.image} />}
@@ -76,63 +89,7 @@ const MainPage: React.FC = () => {
           </Row>
         </div>
 
-        {/* Bizning Xizmatlar */}
-        <div style={{ marginBottom: "30px" }}>
-          <Title level={2}>Bizning Xizmatlar</Title>
-          <Row gutter={16}>
-            <Col span={8}>
-              <Card title="Ta'lim Dasturlari">
-                <Paragraph>
-                  Bizning turli ta'lim dasturlarimiz bilan tanishing.
-                </Paragraph>
-              </Card>
-            </Col>
-            <Col span={8}>
-              <Card title="Tadbirlar">
-                <Paragraph>
-                  Yaqinlashayotgan tadbirlar va faoliyatlar haqida ma'lumot.
-                </Paragraph>
-              </Card>
-            </Col>
-            <Col span={8}>
-              <Card title="Sport">
-                <Paragraph>
-                  Sport musobaqalari va o'yinlar haqida ma'lumot.
-                </Paragraph>
-              </Card>
-            </Col>
-          </Row>
-        </div>
-
-        {/* Galereya */}
-        <div style={{ marginBottom: "30px" }}>
-          <Title level={2}>Galereya</Title>
-          <Row gutter={16}>
-            <Col span={8}>
-              <Card cover={<img alt="Example" src="/path/to/image1.jpg" />}>
-                <Card.Meta title="Tadbir 1" />
-              </Card>
-            </Col>
-            <Col span={8}>
-              <Card cover={<img alt="Example" src="/path/to/image2.jpg" />}>
-                <Card.Meta title="Tadbir 2" />
-              </Card>
-            </Col>
-            <Col span={8}>
-              <Card cover={<img alt="Example" src="/path/to/image3.jpg" />}>
-                <Card.Meta title="Tadbir 3" />
-              </Card>
-            </Col>
-          </Row>
-        </div>
-
-        {/* Kontakt Ma'lumotlari */}
-        <div style={{ textAlign: "center" }}>
-          <Title level={2}>Biz bilan Bog'lanish</Title>
-          <Button type="primary">
-            <NavLink to="/contact">Aloqa Formasi</NavLink>
-          </Button>
-        </div>
+        {/* Boshqa bloklar kodini davom ettiring... */}
       </Content>
     </Layout>
   );

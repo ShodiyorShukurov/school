@@ -11,6 +11,9 @@ const HeaderPage: React.FC = () => {
     <Layout>
       <Header
         style={{
+          position: "fixed",
+          zIndex: "100",
+          width: "100%",
           backgroundColor: "#fff",
           display: "flex",
           alignItems: "center",
@@ -22,7 +25,7 @@ const HeaderPage: React.FC = () => {
           <img
             src={logo}
             alt="Mehrli Maktab Logo"
-            style={{ height: "50px", marginRight: "20px" }}
+            style={{ height: "62px", marginRight: "20px" }}
           />
         </a>
         <Menu mode="horizontal" style={{ borderBottom: "none" }}>
