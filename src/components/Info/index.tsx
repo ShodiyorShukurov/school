@@ -1,14 +1,18 @@
 import React from "react";
-import { Layout, Typography, Row, Col, Card } from "antd";
+import {
+  Layout,
+  // Typography, Row, Col, Card
+} from "antd";
 
 const { Content } = Layout;
-const { Title, Paragraph } = Typography;
+// const { Title, Paragraph } = Typography;
 
 const InfoPage: React.FC = () => {
   return (
     <Layout>
-      <Content style={{ padding: "20px" }}>
-        <div style={{ marginBottom: "30px" }}>
+      <Content style={{ padding: "20px", paddingTop: "60px" }}>
+        Main Page
+        {/*<div style={{ marginBottom: "30px" }}>
           <Title level={2}>Maktab Tarixi</Title>
           <Paragraph>
             Mehrli Maktab 1990-yilda tashkil etilgan. O'shandan beri, biz
@@ -51,41 +55,38 @@ const InfoPage: React.FC = () => {
         </div>
 
         {/* Xodimlar */}
-        <div style={{ marginBottom: "30px" }}>
+        {/*<div style={{ marginBottom: "30px" }}>
           <Title level={2}>Xodimlar</Title>
           <Paragraph>
             Bizning jamoamiz tajribali o'qituvchilardan iborat. Har bir xodim
             maktabimizning muvaffaqiyatiga hissa qo'shadi.
           </Paragraph>
-        </div>
-
+        </div>*/}
         {/* Yutuqlar va Mukofotlar */}
-        <div style={{ marginBottom: "30px" }}>
+        {/*<div style={{ marginBottom: "30px" }}>
           <Title level={2}>Yutuqlar va Mukofotlar</Title>
           <Paragraph>
             Maktabimiz bir necha xalqaro va milliy mukofotlarga sazovor bo'ldi.
             Boshqa yutuqlarimiz bilan tanishing.
           </Paragraph>
-        </div>
-
+        </div>*/}
         {/* Maktab Hayoti */}
-        <div style={{ marginBottom: "30px" }}>
+        {/*<div style={{ marginBottom: "30px" }}>
           <Title level={2}>Maktab Hayoti</Title>
           <Paragraph>
             Maktab hayoti doimo qiziqarli va faoliyatlarga boy. Bizning
             tadbirlar va faoliyatlarimiz haqida ma'lumot oling.
           </Paragraph>
-        </div>
-
+        </div>*/}
         {/* Maktab Tashkilotlari */}
-        <div>
+        {/*<div>
           <Title level={2}>Maktab Tashkilotlari</Title>
           <Paragraph>
             Maktabimizda turli tashkilotlar va klub va jamoalar faoliyat
             yuritmoqda. Ushbu tashkilotlar o'quvchilarga qo'shimcha imkoniyatlar
             taqdim etadi.
           </Paragraph>
-        </div>
+        </div>*/}
       </Content>
     </Layout>
   );

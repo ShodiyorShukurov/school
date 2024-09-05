@@ -1,13 +1,26 @@
 import React from "react";
-import { Layout, Card,  Typography, Divider, Row, Col } from "antd";
+import { Layout, Card, Typography, Divider, Row, Col, Avatar, Tag } from "antd";
+import {
+  CalendarOutlined,
+  PhoneOutlined,
+  MailOutlined,
+} from "@ant-design/icons";
 
 const { Content } = Layout;
 const { Title, Paragraph, Text } = Typography;
 
 const OAVPage: React.FC = () => {
   const pressReleases = [
-    { title: "Yangi Tashabbus E'lon Qilindi", date: "2023-09-01" },
-    { title: "Maktabimiz Haqida So'nggi Yangiliklar", date: "2023-08-15" },
+    {
+      title: "Yangi Tashabbus E'lon Qilindi",
+      date: "2024-09-01",
+      description: "Yangi tashabbus haqida batafsil ma'lumotlar.",
+    },
+    {
+      title: "Maktabimiz Haqida So'nggi Yangiliklar",
+      date: "2024-08-15",
+      description: "So'nggi yangiliklar va voqealar to'g'risida ma'lumotlar.",
+    },
   ];
 
   const mediaContacts = [
@@ -21,14 +34,14 @@ const OAVPage: React.FC = () => {
 
   return (
     <Layout>
-      <Content style={{ padding: "40px" }}>
+      <Content style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
         <Title level={2} style={{ color: "#003366", textAlign: "center" }}>
           OAV Sahifasi
         </Title>
         <Paragraph
           style={{
             textAlign: "center",
-            maxWidth: "600px",
+            maxWidth: "800px",
             margin: "0 auto",
             color: "#666",
           }}
@@ -37,36 +50,75 @@ const OAVPage: React.FC = () => {
           ma'lumotlari bilan tanishing.
         </Paragraph>
 
-        {/* Matbuot Xabarlari */}
-        <Divider>Matbuot Xabarlari</Divider>
+        <Divider style={{ borderColor: "#003366" }}>Matbuot Xabarlari</Divider>
         <Row gutter={[16, 16]}>
           {pressReleases.map((item, index) => (
             <Col xs={24} sm={12} md={8} key={index}>
-              <Card hoverable>
-                <Title level={4}>{item.title}</Title>
+              <Card
+                hoverable
+                cover={
+                  <img
+                    alt="News"
+                    src={`https://via.placeholder.com/300x200?text=News+Image`}
+                    style={{
+                      width: "100%",
+                      height: "200px",
+                      objectFit: "cover",
+                      borderRadius: "8px 8px 0 0",
+                    }}
+                  />
+                }
+                style={{
+                  borderRadius: "8px",
+                  boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                }}
+              >
+                <Title level={4} style={{ marginBottom: "8px" }}>
+                  {item.title}
+                </Title>
                 <Text type="secondary">
+                  <CalendarOutlined />{" "}
                   {new Date(item.date).toLocaleDateString()}
                 </Text>
+                <Paragraph style={{ marginTop: "8px" }}>
+                  {item.description}
+                </Paragraph>
+                <Tag color="blue">Matbuot xabari</Tag>
               </Card>
             </Col>
           ))}
         </Row>
 
-        {/* Media uchun Aloqa Ma'lumotlari */}
-        <Divider>Media uchun Aloqa Ma'lumotlari</Divider>
+        <Divider style={{ borderColor: "#003366" }}>
+          Media uchun Aloqa Ma'lumotlari
+        </Divider>
         <Row gutter={[16, 16]}>
           {mediaContacts.map((contact, index) => (
             <Col xs={24} sm={12} md={8} key={index}>
               <Card
                 hoverable
                 bordered={false}
-                style={{ border: "1px solid #e8e8e8" }}
-                bodyStyle={{ padding: "20px" }}
+                style={{
+                  border: "1px solid #e8e8e8",
+                  borderRadius: "8px",
+                  boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                }}
               >
-                <Title level={4}>{contact.name}</Title>
-                <Text strong>{contact.role}</Text>
-                <p>Telefon: {contact.phone}</p>
-                <p>Email: {contact.email}</p>
+                <Card.Meta
+                  avatar={
+                    <Avatar style={{ backgroundColor: "#87d068" }}>
+                      {contact.name[0]}
+                    </Avatar>
+                  }
+                  title={contact.name}
+                  description={<Text strong>{contact.role}</Text>}
+                />
+                <p style={{ margin: "8px 0" }}>
+                  <PhoneOutlined /> {contact.phone}
+                </p>
+                <p style={{ margin: "8px 0" }}>
+                  <MailOutlined /> {contact.email}
+                </p>
               </Card>
             </Col>
           ))}

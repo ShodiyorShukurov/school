@@ -9,14 +9,19 @@ const { Title, Paragraph, Text } = Typography;
 
 const AboutUsPage: React.FC = () => {
   return (
-    <Layout style={{ backgroundColor: "#fad2e3" }}>
+    <Layout>
       <Content style={{ padding: "20px", paddingTop: "60px" }}>
         <Title level={1} style={{ textAlign: "center", color: "#000" }}>
           Biz haqimizda
         </Title>
 
         <Paragraph
-          style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}
+          style={{
+            maxWidth: "800px",
+            margin: "0 auto",
+            marginBottom: "30px",
+            fontSize: "18px",
+          }}
         >
           <strong>Mehrli Maktab </strong> - bu nafaqat bilim olish joyi, balki
           bolalarning ruhiy va ma'naviy rivojlanishiga xizmat qiladigan ma'naviy
@@ -25,30 +30,38 @@ const AboutUsPage: React.FC = () => {
           yaratamiz.
         </Paragraph>
 
-        <Row gutter={16} style={{ margin: "40px 0" }}>
-          <Col xs={24} md={12}>
-            <img
-              src={maktab}
-              alt="Mehrli Maktab"
-              style={{ width: "100%", height: "400px", borderRadius: "8px" }}
-            />
-            <div style={{ padding: "20px" }}>
-              <Title level={3}>
-                <strong style={{ fontWeight: 800 }}>"Bizning maqsadimiz</strong>
-                - bolalarning bilim va iste'dodlarini eng yuqori cho'qqilarga
-                ko'tarishdir. <strong style={{ fontWeight: 800 }}>"</strong>
-              </Title>
-              <Paragraph style={{ fontWeight: "600" }}>
-                Bizning maktabimizda har bir o'quvchining talanti va
-                qobiliyatlarini rivojlantirishga alohida e'tibor qaratiladi.
-                Buning uchun biz zamonaviy va innovatsion ta'lim usullaridan
-                foydalanamiz.
-              </Paragraph>
-            </div>
-          </Col>
-        </Row>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "30px",
+          }}
+        >
+          <img
+            src={maktab}
+            alt="Mehrli Maktab"
+            style={{
+              maxWidth: "600px",
+              maxHeight: "400px",
+              borderRadius: "8px",
+            }}
+          />
+        </div>
 
-        <Divider />
+        <div style={{ padding: "20px", textAlign: "center" }}>
+          <Title level={3}>
+            <strong style={{ fontWeight: 800 }}>"Bizning maqsadimiz</strong>-
+            bolalarning bilim va iste'dodlarini eng yuqori cho'qqilarga
+            ko'tarishdir. <strong style={{ fontWeight: 800 }}>"</strong>
+          </Title>
+          <Paragraph style={{ fontWeight: "600", fontSize: "16px" }}>
+            Bizning maktabimizda har bir o'quvchining talanti va qobiliyatlarini
+            rivojlantirishga alohida e'tibor qaratiladi. Buning uchun biz
+            zamonaviy va innovatsion ta'lim usullaridan foydalanamiz.
+          </Paragraph>
+        </div>
+
+        <Divider style={{ borderColor: "#003366" }} />
         <Title
           level={2}
           style={{
@@ -60,7 +73,7 @@ const AboutUsPage: React.FC = () => {
         >
           "Kelajak bu erda boshlanadi!"
         </Title>
-        <Divider />
+        <Divider style={{ borderColor: "#003366" }} />
 
         <Row gutter={16} style={{ marginTop: "40px" }}>
           <Col xs={24} md={12} style={{ textAlign: "center" }}>

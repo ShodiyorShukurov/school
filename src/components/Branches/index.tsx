@@ -77,7 +77,7 @@ const BranchesPage: React.FC = () => {
   return (
     <Layout>
       <Content style={{ padding: "20px", paddingTop: "60px" }}>
-        <Divider>
+        <Divider style={{ borderColor: "#003366" }}>
           <Title level={2}>Filiallarimiz</Title>
         </Divider>
         <Paragraph
@@ -97,35 +97,8 @@ const BranchesPage: React.FC = () => {
               header={<strong style={{ fontSize: "18px" }}>{item.name}</strong>}
               key={index}
             >
-              <div
-                style={{
-                  marginBottom: "16px",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    fontSize: "16px",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <p>
-                    <strong>Mo'ljal:</strong> <EnvironmentOutlined />{" "}
-                    {item.address}
-                  </p>
-                  <p>
-                    <strong>Telefon raqam:</strong> <PhoneOutlined />{" "}
-                    {item.phone}
-                  </p>
-                  <p>
-                    <strong>E-mail:</strong> <MailOutlined /> {item.email}
-                  </p>
-                  <p>
-                    {" "}
-                    <strong>Ish vaqti:</strong> {item.workingHours}
-                  </p>
-                </div>
-                <div style={{display: "flex", justifyContent: "space-between"}}>
+              <div style={{display: "flex", justifyContent: 'space-evenly'}}>
+
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48831.7923815649!2d65.33041391535039!3d40.098002251813455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f51c6d7e12931b3%3A0x613f6eb9636019bb!2z0J3QsNCy0L7QuCwg0KHQsNC80LDRgNC60LDQvdC00YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2s!4v1725429066871!5m2!1sru!2s"
                     width="300"
@@ -155,16 +128,23 @@ const BranchesPage: React.FC = () => {
                       marginLeft: "16px",
                     }}
                   />
-                  <img
-                    alt={item.name}
-                    src={item.image}
-                    style={{
-                      width: "300px",
-                      height: "300px",
-                      objectFit: "cover",
-                      marginLeft: "16px",
-                    }}
-                  />
+                <div style={{marginLeft: "20px", display: "flex", justifyContent: "center", flexDirection: "column"}}
+                >
+                  <p>
+                    <strong>Mo'ljal:</strong> <EnvironmentOutlined />{" "}
+                    {item.address}
+                  </p>
+                  <p>
+                    <strong>Telefon raqam:</strong> <PhoneOutlined />{" "}
+                    {item.phone}
+                  </p>
+                  <p>
+                    <strong>E-mail:</strong> <MailOutlined /> {item.email}
+                  </p>
+                  <p>
+                    {" "}
+                    <strong>Ish vaqti:</strong> {item.workingHours}
+                  </p>
                 </div>
               </div>
             </Panel>

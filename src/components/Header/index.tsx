@@ -21,7 +21,6 @@ const HeaderPage: React.FC = () => {
         }}
       >
         <a style={{ display: "flex", alignItems: "center" }} href="/">
-          {/* Logotip qo'shish */}
           <img
             src={logo}
             alt="Mehrli Maktab Logo"

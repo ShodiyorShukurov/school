@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Typography, Row, Col, Card,  Carousel } from "antd";
+import { Layout, Typography, Row, Col, Card, Carousel } from "antd";
 import { NavLink } from "react-router-dom";
 import rasm1 from "../../assets/toshkent.jpeg";
 import rasm2 from "../../assets/navoiy.jpg";
@@ -42,7 +42,7 @@ const newsData: News[] = [
 const MainPage: React.FC = () => {
   return (
     <Layout>
-      <Carousel autoplay style={{paddingTop: '60px'}}>
+      <Carousel autoplay style={{ paddingTop: "60px" }}>
         {newsData.map((news) => (
           <div key={news.id}>
             <img
@@ -58,7 +58,6 @@ const MainPage: React.FC = () => {
         ))}
       </Carousel>
       <Content style={{ padding: "20px" }}>
-      
         <div style={{ textAlign: "center", marginBottom: "30px" }}>
           <Title level={1}>Mehrli Maktabga Xush Kelibsiz!</Title>
           <Paragraph>
@@ -88,8 +87,6 @@ const MainPage: React.FC = () => {
             ))}
           </Row>
         </div>
-
-        {/* Boshqa bloklar kodini davom ettiring... */}
       </Content>
     </Layout>
   );

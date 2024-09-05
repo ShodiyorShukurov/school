@@ -6,13 +6,13 @@ import {
   Card,
   List,
   Typography,
-  Input,
+  // Input,
   Button,
-  Row,
-  Col,
+  // Row,
+  // Col,
 } from "antd";
 import {
-  SearchOutlined,
+  // SearchOutlined,
   EyeOutlined,
   LikeOutlined,
   InfoCircleOutlined,
@@ -58,10 +58,9 @@ const newsData: News[] = [
 ];
 
 const NewsPage: React.FC = () => {
-  // Yoqtirish tugmasi uchun davlat boshqaruvi (state management)
+
   const [newsList, setNewsList] = useState(newsData);
 
-  // Yangilikni yoqtirish funksiyasi
   const handleLike = (id: number) => {
     const updatedNews = newsList.map((news) =>
       news.id === id ? { ...news, likes: news.likes + 1 } : news
@@ -71,12 +70,12 @@ const NewsPage: React.FC = () => {
 
   return (
     <Layout>
-      <Content style={{ padding: "20px" }}>
-        {/* Sarlavha */}
+      <Content style={{ padding: "20px", paddingTop: "60px" }}>
+
         <Title level={2}>Yangiliklar</Title>
 
-        {/* Qidiruv va Filtrlar */}
-        <Row justify="space-between" style={{ marginBottom: "20px" }}>
+     {/* Qidiruv va Filtrlar */}
+{/*        <Row justify="space-between" style={{ marginBottom: "20px" }}>
           <Col>
             <Input
               prefix={<SearchOutlined />}
@@ -87,9 +86,8 @@ const NewsPage: React.FC = () => {
           <Col>
             <Button type="primary">Kategoriya bo'yicha filtrlash</Button>
           </Col>
-        </Row>
+        </Row>*/}
 
-        {/* Yangiliklar ro'yxati */}
         <List
           grid={{ gutter: 16, column: 3 }}
           dataSource={newsList}
