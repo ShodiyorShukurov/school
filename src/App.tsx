@@ -18,7 +18,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/oav" element={<OavPage />} />
-        <Route path="/" element={<Navigate to="/oav" />} />
+        <Route path="/" element={<Navigate to="/main" />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/info" element={<InfoPage />} />
         <Route path="/news" element={<NewsPage />} />
