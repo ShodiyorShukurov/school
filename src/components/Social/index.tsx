@@ -63,11 +63,12 @@ const SocialPage: React.FC = () => {
                 hoverable
                 style={{
                   textAlign: "center",
-                  borderRadius: "10px",
+                  border: "1px solid #e8e8e8",
+                  borderRadius: "8px",
                   boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
                   background: "white",
                   padding: "20px",
-                  height: "100%"
+                  height: "100%",
                 }}
               >
                 {social.icon}
@@ -115,8 +116,9 @@ const SocialPage: React.FC = () => {
               <div
                 style={{
                   background: "#ffffff",
-                  borderRadius: "10px",
-                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+                  border: "1px solid #e8e8e8",
+                  borderRadius: "8px",
+                  boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
                   padding: "20px",
                   height: "100%",
                 }}

@@ -5,6 +5,7 @@ import {
   PhoneOutlined,
   MailOutlined,
 } from "@ant-design/icons";
+import oav from '../../assets/oav.jpg'
 
 const { Content } = Layout;
 const { Title, Paragraph, Text } = Typography;
@@ -15,17 +16,12 @@ const OAVPage: React.FC = () => {
       title: "Yangi Tashabbus E'lon Qilindi",
       date: "2024-09-01",
       description: "Yangi tashabbus haqida batafsil ma'lumotlar.",
-    },
-    {
-      title: "Maktabimiz Haqida So'nggi Yangiliklar",
-      date: "2024-08-15",
-      description: "So'nggi yangiliklar va voqealar to'g'risida ma'lumotlar.",
-    },
+    }
   ];
 
   const mediaContacts = [
     {
-      name: "Alisher Qodirov",
+      name: "Shodiyor Shukurov",
       role: "PR Menedjer",
       phone: "+998 90 123 4567",
       email: "alisher@mehrlimaktab.uz",
@@ -59,7 +55,7 @@ const OAVPage: React.FC = () => {
                 cover={
                   <img
                     alt="News"
-                    src={`https://via.placeholder.com/300x200?text=News+Image`}
+                    src={oav}
                     style={{
                       width: "100%",
                       height: "200px",

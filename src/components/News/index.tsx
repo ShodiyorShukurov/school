@@ -18,8 +18,8 @@ import {
   InfoCircleOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import rasm1 from '../../assets/navoiy.jpg'
-import rasm2 from "../../assets/toshkent.jpeg"
+import rasm1 from "../../assets/navoiy.jpg";
+import rasm2 from "../../assets/toshkent.jpeg";
 
 const { Content } = Layout;
 const { Title } = Typography;
@@ -41,7 +41,7 @@ const newsData: News[] = [
     description:
       "Mehrli maktabda yangi o'quv yilining boshlanishi nishonlandi.",
     date: "Sentabr 01, 2024",
-    image: rasm1 ,
+    image: rasm1,
     views: 124,
     likes: 34,
   },
@@ -54,11 +54,36 @@ const newsData: News[] = [
     views: 89,
     likes: 25,
   },
-
+  {
+    id: 3,
+    title: "O'quvchilarimizning muvaffaqiyatlari",
+    description: "O'quvchilarimiz xalqaro tanlovda g'olib chiqishdi.",
+    date: "Avgust 25, 2024",
+    image: rasm2,
+    views: 89,
+    likes: 25,
+  },
+  {
+    id: 4,
+    title: "O'quvchilarimizning muvaffaqiyatlari",
+    description: "O'quvchilarimiz xalqaro tanlovda g'olib chiqishdi.",
+    date: "Avgust 25, 2024",
+    image: rasm2,
+    views: 89,
+    likes: 25,
+  },
+  {
+    id: 5,
+    title: "O'quvchilarimizning muvaffaqiyatlari",
+    description: "O'quvchilarimiz xalqaro tanlovda g'olib chiqishdi.",
+    date: "Avgust 25, 2024",
+    image: rasm2,
+    views: 89,
+    likes: 25,
+  },
 ];
 
 const NewsPage: React.FC = () => {
-
   const [newsList, setNewsList] = useState(newsData);
 
   const handleLike = (id: number) => {
@@ -71,22 +96,9 @@ const NewsPage: React.FC = () => {
   return (
     <Layout>
       <Content style={{ padding: "20px", paddingTop: "60px" }}>
-
-        <Title level={2}>Yangiliklar</Title>
-
-     {/* Qidiruv va Filtrlar */}
-{/*        <Row justify="space-between" style={{ marginBottom: "20px" }}>
-          <Col>
-            <Input
-              prefix={<SearchOutlined />}
-              placeholder="Yangiliklarni qidirish"
-              style={{ width: "300px" }}
-            />
-          </Col>
-          <Col>
-            <Button type="primary">Kategoriya bo'yicha filtrlash</Button>
-          </Col>
-        </Row>*/}
+        <Title level={2} style={{ textAlign: "center" }}>
+          Yangiliklar
+        </Title>
 
         <List
           grid={{ gutter: 16, column: 3 }}
@@ -94,6 +106,11 @@ const NewsPage: React.FC = () => {
           renderItem={(item) => (
             <List.Item>
               <Card
+                style={{
+                  border: "1px solid #e8e8e8",
+                  borderRadius: "8px",
+                  boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
+                }}
                 cover={<img alt={item.title} src={item.image} />}
                 actions={[
                   <Button type="link" onClick={() => handleLike(item.id)}>
