@@ -8,7 +8,6 @@ import {
   Divider,
   Carousel,
   Image,
-  Space,
   Button,
 } from "antd";
 import { VideoCameraOutlined } from "@ant-design/icons";
@@ -16,6 +15,7 @@ import yutuqlar1 from "../../assets/yutuqlar/yutuq1.jpeg";
 import yutuqlar2 from "../../assets/yutuqlar/yutuq2.jpg";
 import yutuqlar3 from "../../assets/yutuqlar/yutuq3.jpg";
 import yutuq4 from "../../assets/yutuqlar/yutuq4.jpg";
+import history from "../../assets/tarix.jpg";
 
 const { Content } = Layout;
 const { Title, Paragraph } = Typography;
@@ -23,10 +23,18 @@ const { Title, Paragraph } = Typography;
 const InfoPage: React.FC = () => {
   return (
     <Layout>
-      <Content style={{ padding: "40px" }}>
-        {/* Asosiy sarlavha */}
-        <div style={{ textAlign: "center", marginBottom: "50px" }}>
-          <Title level={1} style={{ color: "#1A5F7A", fontWeight: "bold" }}>
+      <Content style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
+        <div
+          style={{
+            textAlign: "center",
+            marginBottom: "50px",
+            marginTop: "50px",
+          }}
+        >
+          <Title
+            level={2}
+            style={{ color: "#1A5F7A", textAlign: "center", margin: "20px" }}
+          >
             Mehrli Maktab Haqida
           </Title>
           <Paragraph
@@ -37,15 +45,12 @@ const InfoPage: React.FC = () => {
           </Paragraph>
         </div>
 
-        {/* Video blok */}
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <iframe
             width="600"
             height="350"
             style={{
               borderRadius: "20px",
-              border: "5px solid #1A5F7A",
-              boxShadow: "0 8px 16px rgba(0,0,0,0.2)",
             }}
             src="https://www.youtube.com/embed/UDdzksWkuUE"
             title="Maktabgacha ta'lim"
@@ -61,25 +66,22 @@ const InfoPage: React.FC = () => {
           </Paragraph>
         </div>
 
-        <Divider style={{ borderColor: "#003366", marginBottom: "40px" }} />
+        <Divider style={{ borderColor: "#003366", marginBottom: "40px" }}>
+          <Title level={4} style={{ color: "#1A5F7A", margin: 0 }}>
+            Maktab Tarixi
+          </Title>
+        </Divider>
 
-        {/* Maktab tarixi */}
         <Row gutter={32} justify="center">
           <Col xs={24} md={12}>
             <Card
-              title={
-                <Title level={3} style={{ color: "#1A5F7A" }}>
-                  Maktab Tarixi
-                </Title>
-              }
               bordered={false}
               cover={
                 <Image
                   alt="Maktab tarixi"
-                  src={`https://via.placeholder.com/300x200?text=News+Image`}
+                  src={history}
                   style={{
-                    height: "200px",
-                    objectFit: "cover",
+                    height: "300px",
                     borderRadius: "8px",
                   }}
                 />
@@ -88,7 +90,6 @@ const InfoPage: React.FC = () => {
                 border: "1px solid #e8e8e8",
                 borderRadius: "8px",
                 boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                transition: "transform 0.3s ease-in-out",
                 cursor: "pointer",
               }}
               hoverable
@@ -107,14 +108,13 @@ const InfoPage: React.FC = () => {
           </Col>
         </Row>
 
-        <Divider style={{ borderColor: "#003366", marginTop: "40px" }} />
-
-        {/* Yutuqlar qismi */}
-        <div style={{ textAlign: "center", marginTop: "30px" }}>
-          <Title level={2} style={{ color: "#1A5F7A" }}>
+        <Divider style={{ borderColor: "#003366", marginTop: "40px" }}>
+          <Title level={4} style={{ color: "#1A5F7A", margin: 0 }}>
             Bizning Yutuqlarimiz
           </Title>
+        </Divider>
 
+        <div style={{ textAlign: "center", marginTop: "30px" }}>
           <Carousel
             autoplay
             dots={true}
@@ -130,19 +130,11 @@ const InfoPage: React.FC = () => {
                     height: "400px",
                     objectFit: "cover",
                     borderRadius: "20px",
-                    border: "5px solid #1A5F7A",
-                    boxShadow: "0 8px 16px rgba(0,0,0,0.2)",
                   }}
                 />
               </div>
             ))}
           </Carousel>
-          <Paragraph
-            style={{ fontSize: "16px", marginTop: "20px", color: "#555" }}
-          >
-            Maktabimiz o'quvchilari ko'plab xalqaro va milliy tanlovlarda g'olib
-            chiqishgan!
-          </Paragraph>
         </div>
       </Content>
     </Layout>

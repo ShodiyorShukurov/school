@@ -50,16 +50,16 @@ const OpinionPage: React.FC = () => {
           maxWidth: "800px",
           margin: "auto",
           paddingTop: "60px",
+          backgroundColor: "#f9f9f9",
         }}
       >
-        <Title level={2} style={{ color: "#003366" }}>
+        <Title level={2} style={{ color: "#1A5F7A" }}>
           Sizning Fikringiz
         </Title>
         <Paragraph>
           Bizning xizmatlarimiz yoki maktabimiz haqida fikringizni bildiring!
           Sizning fikringiz biz uchun juda muhim.
         </Paragraph>
-
 
         <Form layout="vertical" onFinish={handleFormSubmit}>
           <Form.Item
@@ -108,7 +108,6 @@ const OpinionPage: React.FC = () => {
               Yuborish
             </Button>
           </Form.Item>
-
         </Form>
 
         <Divider>Foydalanuvchi Sharhlari</Divider>

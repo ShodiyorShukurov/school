@@ -56,9 +56,10 @@ const ContactUsPage: React.FC = () => {
           maxWidth: "800px",
           margin: "auto",
           paddingTop: "60px",
+          backgroundColor: "#f9f9f9",
         }}
       >
-        <Title level={2} style={{ color: "#003366" }}>
+        <Title level={2} style={{ color: "#1A5F7A" }}>
           Biz bilan Aloqa
         </Title>
         <Paragraph>

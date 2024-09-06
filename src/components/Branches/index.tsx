@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Typography, Collapse, Divider } from "antd";
+import { Layout, Typography, Collapse } from "antd";
 import {
   EnvironmentOutlined,
   PhoneOutlined,
@@ -76,10 +76,13 @@ const filiallarData: Filial[] = [
 const BranchesPage: React.FC = () => {
   return (
     <Layout>
-      <Content style={{ padding: "20px", paddingTop: "60px" }}>
-        <Divider style={{ borderColor: "#003366" }}>
-          <Title level={2}>Filiallarimiz</Title>
-        </Divider>
+      <Content style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
+          <Title
+            level={2}
+            style={{ color: "#1A5F7A", textAlign: "center", marginTop: "50px" }}
+          >
+            Filiallarimiz
+          </Title>
         <Paragraph
           style={{
             textAlign: "center",
@@ -97,38 +100,43 @@ const BranchesPage: React.FC = () => {
               header={<strong style={{ fontSize: "18px" }}>{item.name}</strong>}
               key={index}
             >
-              <div style={{display: "flex", justifyContent: 'space-evenly'}}>
+              <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48831.7923815649!2d65.33041391535039!3d40.098002251813455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f51c6d7e12931b3%3A0x613f6eb9636019bb!2z0J3QsNCy0L7QuCwg0KHQsNC80LDRgNC60LDQvdC00YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2s!4v1725429066871!5m2!1sru!2s"
+                  width="300"
+                  height="300"
+                  style={{ border: 0 }}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
 
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48831.7923815649!2d65.33041391535039!3d40.098002251813455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f51c6d7e12931b3%3A0x613f6eb9636019bb!2z0J3QsNCy0L7QuCwg0KHQsNC80LDRgNC60LDQvdC00YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCj0LfQsdC10LrQuNGB0YLQsNC9!5e0!3m2!1sru!2s!4v1725429066871!5m2!1sru!2s"
-                    width="300"
-                    height="300"
-                    style={{ border: 0 }}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
-
-                  <img
-                    alt={item.name}
-                    src={item.image}
-                    style={{
-                      width: "300px",
-                      height: "300px",
-                      objectFit: "cover",
-                      marginLeft: "16px",
-                    }}
-                  />
-                  <img
-                    alt={item.name}
-                    src={item.image}
-                    style={{
-                      width: "300px",
-                      height: "300px",
-                      objectFit: "cover",
-                      marginLeft: "16px",
-                    }}
-                  />
-                <div style={{marginLeft: "20px", display: "flex", justifyContent: "center", flexDirection: "column"}}
+                <img
+                  alt={item.name}
+                  src={item.image}
+                  style={{
+                    width: "300px",
+                    height: "300px",
+                    objectFit: "cover",
+                    marginLeft: "16px",
+                  }}
+                />
+                <img
+                  alt={item.name}
+                  src={item.image}
+                  style={{
+                    width: "300px",
+                    height: "300px",
+                    objectFit: "cover",
+                    marginLeft: "16px",
+                  }}
+                />
+                <div
+                  style={{
+                    marginLeft: "20px",
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                  }}
                 >
                   <p>
                     <strong>Mo'ljal:</strong> <EnvironmentOutlined />{" "}

@@ -95,8 +95,11 @@ const NewsPage: React.FC = () => {
 
   return (
     <Layout>
-      <Content style={{ padding: "20px", paddingTop: "60px" }}>
-        <Title level={2} style={{ textAlign: "center" }}>
+      <Content style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
+        <Title
+          level={2}
+          style={{ color: "#1A5F7A", textAlign: "center", marginTop: "50px" }}
+        >
           Yangiliklar
         </Title>
 

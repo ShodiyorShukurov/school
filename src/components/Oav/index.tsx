@@ -5,7 +5,7 @@ import {
   PhoneOutlined,
   MailOutlined,
 } from "@ant-design/icons";
-import oav from '../../assets/oav.jpg'
+import elon from '../../assets/elon.jpg'
 
 const { Content } = Layout;
 const { Title, Paragraph, Text } = Typography;
@@ -31,7 +31,7 @@ const OAVPage: React.FC = () => {
   return (
     <Layout>
       <Content style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
-        <Title level={2} style={{ color: "#003366", textAlign: "center" }}>
+        <Title level={2} style={{ color: "#1A5F7A", textAlign: "center", marginTop: "50px" }}>
           OAV Sahifasi
         </Title>
         <Paragraph
@@ -46,7 +46,12 @@ const OAVPage: React.FC = () => {
           ma'lumotlari bilan tanishing.
         </Paragraph>
 
-        <Divider style={{ borderColor: "#003366" }}>Matbuot Xabarlari</Divider>
+        <Divider style={{ borderColor: "#003366" }}>
+          <Title level={4} style={{ margin: 0, color: "#1A5F7A" }}>
+            Matbuot Xabarlari
+          </Title>
+        </Divider>
+
         <Row gutter={[16, 16]}>
           {pressReleases.map((item, index) => (
             <Col xs={24} sm={12} md={8} key={index}>
@@ -55,11 +60,10 @@ const OAVPage: React.FC = () => {
                 cover={
                   <img
                     alt="News"
-                    src={oav}
+                    src={elon}
                     style={{
                       width: "100%",
                       height: "200px",
-                      objectFit: "cover",
                       borderRadius: "8px 8px 0 0",
                     }}
                   />
@@ -86,7 +90,9 @@ const OAVPage: React.FC = () => {
         </Row>
 
         <Divider style={{ borderColor: "#003366" }}>
-          Media uchun Aloqa Ma'lumotlari
+          <Title level={4} style={{ margin: 0, color: "#1A5F7A" }}>
+            Media uchun Aloqa Ma'lumotlari
+          </Title>
         </Divider>
         <Row gutter={[16, 16]}>
           {mediaContacts.map((contact, index) => (

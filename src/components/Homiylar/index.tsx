@@ -24,14 +24,17 @@ const sponsorsData = [homiy4, homiy3, homiy2, homiy1, homiy5];
 const HomiylarPage: React.FC = () => {
   return (
     <Layout>
-      <Content style={{ padding: "40px", paddingTop: "60px" }}>
-        <Title level={2} style={{ textAlign: "center" }}>
+      <Content style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
+        <Title
+          level={2}
+          style={{ color: "#1A5F7A", textAlign: "center", marginTop: "50px" }}
+        >
           Bizning homiylar
         </Title>
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
           <div style={{ textAlign: "center" }}>
             <Divider style={{ borderColor: "#003366" }}>
-              <Title level={3} style={{ margin: 0 }}>
+              <Title level={4} style={{ margin: 0, color: "#1A5F7A" }}>
                 {mainSponsor.name}
               </Title>
             </Divider>
@@ -54,7 +57,7 @@ const HomiylarPage: React.FC = () => {
         </div>
 
         <Divider style={{ borderColor: "#003366" }}>
-          <Title level={4} style={{ margin: 0 }}>
+          <Title level={4} style={{ margin: 0, color: "#1A5F7A" }}>
             Boshqa homiylar
           </Title>
         </Divider>
@@ -71,7 +74,7 @@ const HomiylarPage: React.FC = () => {
         </div>
 
         <Divider style={{ borderColor: "#003366" }}>
-          <Title level={4} style={{ margin: 0 }}>
+          <Title level={4} style={{ margin: 0, color: "#1A5F7A" }}>
             Homiy bo'ling
           </Title>
         </Divider>

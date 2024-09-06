@@ -1,7 +1,10 @@
 import React from "react";
-import { Layout, Typography, Row, Col, Card, Carousel } from "antd";
+import { Layout, Typography, Row, Col, Card, Carousel, Divider } from "antd";
 import rasm1 from "../../assets/toshkent.jpeg";
 import rasm2 from "../../assets/navoiy.jpg";
+import rasm3 from "../../assets/samarqand.jpg"
+import ustoz from  '../../assets/ustoz.jpg'
+import rivoj from '../../assets/rivoj.jpg';
 
 const { Content } = Layout;
 const { Title, Paragraph } = Typography;
@@ -9,9 +12,8 @@ const { Title, Paragraph } = Typography;
 const MainPage: React.FC = () => {
   return (
     <Layout>
-      {/* Carousel */}
       <Carousel autoplay style={{ paddingTop: "60px" }}>
-        {[rasm1, rasm2].map((image, index) => (
+        {[rasm1, rasm2, rasm3].map((image, index) => (
           <div key={index}>
             <img
               alt={`Carousel image ${index + 1}`}
@@ -19,7 +21,6 @@ const MainPage: React.FC = () => {
               style={{
                 width: "100%",
                 maxHeight: "600px",
-                objectFit: "cover",
                 filter: "brightness(80%)",
               }}
             />
@@ -30,16 +31,13 @@ const MainPage: React.FC = () => {
       <Content
         style={{
           padding: "40px",
-          backgroundColor: "#f3f6f9",
-          transition: "background-color 0.3s",
+          backgroundColor: "#f9f9f9",
         }}
       >
-        {/* Xush Kelibsiz! */}
         <div
           style={{
             textAlign: "center",
             marginBottom: "50px",
-            animation: "fadeInUp 1s ease-in-out",
           }}
         >
           <Title
@@ -84,18 +82,19 @@ const MainPage: React.FC = () => {
           </Paragraph>
         </div>
 
-        {/* Darslar va Faoliyatlar */}
         <div style={{ marginBottom: "40px" }}>
-          <Title
-            level={2}
-            style={{
-              textAlign: "center",
-              color: "#1A5F7A",
-              marginBottom: "30px",
-            }}
-          >
-            Maktabdagi Darslar va Faoliyatlar
-          </Title>
+          <Divider style={{ borderColor: "#003366", marginBottom: "40px" }}>
+            <Title
+              level={4}
+              style={{
+                textAlign: "center",
+                color: "#1A5F7A",
+                margin: 0,
+              }}
+            >
+              Maktabdagi Darslar va Faoliyatlar
+            </Title>
+          </Divider>
           <Row
             gutter={48}
             style={{ textAlign: "center", marginTop: "20px" }}
@@ -106,11 +105,9 @@ const MainPage: React.FC = () => {
                 cover={
                   <img
                     alt="Darslar"
-                    src={`https://via.placeholder.com/300x200?text=Ustozlar+Rasmi`}
+                    src={ustoz}
                     style={{
-                      height: "250px",
-                      objectFit: "cover",
-                      filter: "brightness(90%)",
+                      height: "400px",
                     }}
                   />
                 }
@@ -118,7 +115,6 @@ const MainPage: React.FC = () => {
                 style={{
                   boxShadow: "0 6px 12px rgba(0,0,0,0.1)",
                   borderRadius: "8px",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
                   cursor: "pointer",
                 }}
                 hoverable
@@ -139,11 +135,9 @@ const MainPage: React.FC = () => {
                 cover={
                   <img
                     alt="Faoliyatlar"
-                    src={`https://via.placeholder.com/300x200?text=Faoliyatlar+Rasmi`}
+                    src={rivoj}
                     style={{
-                      height: "250px",
-                      objectFit: "cover",
-                      filter: "brightness(90%)",
+                      height: "400px",
                     }}
                   />
                 }

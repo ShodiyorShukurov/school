@@ -49,10 +49,17 @@ const SocialPage: React.FC = () => {
         style={{
           padding: "40px",
           paddingTop: "60px",
-          backgroundColor: "#f4f4f4",
+          backgroundColor: "#f9f9f9",
         }}
       >
-        <Title level={2} style={{ textAlign: "center", marginBottom: "30px" }}>
+        <Title
+          level={2}
+          style={{
+            textAlign: "center",
+            marginBottom: "30px",
+            color: "#1A5F7A",
+          }}
+        >
           Ijtimoiy Tarmoqlar
         </Title>
         <Divider style={{ borderColor: "#003366" }} />
@@ -94,7 +101,10 @@ const SocialPage: React.FC = () => {
         </Row>
 
         <Divider style={{ borderColor: "#003366", marginTop: "40px" }}>
-          <Title level={3} style={{ textAlign: "center", marginTop: "0px" }}>
+          <Title
+            level={4}
+            style={{ textAlign: "center", margin: "0px", color: "#1A5F7A" }}
+          >
             Ijtimoiy tarmoqlarimizdagi foydalanuvchilar soni
           </Title>
         </Divider>

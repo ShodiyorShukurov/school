@@ -10,8 +10,11 @@ const { Title, Paragraph, Text } = Typography;
 const AboutUsPage: React.FC = () => {
   return (
     <Layout>
-      <Content style={{ padding: "20px", paddingTop: "60px" }}>
-        <Title level={1} style={{ textAlign: "center", color: "#000" }}>
+      <Content style={{ padding: "40px", backgroundColor: "#f9f9f9" }}>
+        <Title
+          level={2}
+          style={{ color: "#1A5F7A", textAlign: "center", marginTop: "50px" }}
+        >
           Biz haqimizda
         </Title>
 
@@ -20,7 +23,8 @@ const AboutUsPage: React.FC = () => {
             maxWidth: "800px",
             margin: "0 auto",
             marginBottom: "30px",
-            fontSize: "18px",
+            fontSize: "17px",
+            textAlign: "center",
           }}
         >
           <strong>Mehrli Maktab </strong> - bu nafaqat bilim olish joyi, balki
@@ -83,7 +87,9 @@ const AboutUsPage: React.FC = () => {
               style={{ width: "150px", borderRadius: "50%", height: "150px" }}
             />
             <Title level={4}>Direktor: Maftuna Karimova</Title>
-            <Text>Bolalar ta'limi sohasida 15 yillik tajriba.</Text>
+            <Text style={{ fontSize: "16px" }}>
+              Bolalar ta'limi sohasida 15 yillik tajriba.
+            </Text>
           </Col>
           <Col xs={24} md={12} style={{ textAlign: "center" }}>
             <img
@@ -92,7 +98,7 @@ const AboutUsPage: React.FC = () => {
               style={{ width: "150px", borderRadius: "50%", height: "150px" }}
             />
             <Title level={4}>Asoschi: Akmal Bekmurodov</Title>
-            <Text>
+            <Text style={{ fontSize: "16px" }}>
               Mehrli Maktab asoschisi va ta'lim faoliyati tashabbuskori.
             </Text>
           </Col>
